@@ -10,7 +10,7 @@ public class Index
 
     public static void main(String[] args) {
 
-        scanner = new Scanner(System.in);
+        scanner = new Scanner(System.in);//
 
         PedidosYa app = new PedidosYa();
         app.agregarUsersYRestaurants();
