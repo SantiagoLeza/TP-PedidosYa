@@ -192,15 +192,6 @@ public class PedidosYa {
             }
         }
 
-        for(Restaurant r : listaRestaurants)
-        {
-            if(r != null)
-            {
-                System.out.println(r.getId());
-                System.out.println(r.getNombre());
-            }
-        }
-
     }
 
     public int cantRestaurants()
