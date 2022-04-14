@@ -206,7 +206,10 @@ public class ArchivoHandler
             String[] categorias = new String[categoriasJson.size() + 5];
             for (int j = 0; j < categoriasJson.size(); j++)
             {
-                categorias[j] = categoriasJson.get(j).toString();
+                if(categoriasJson.get(j) != null)
+                {
+                    categorias[j] = categoriasJson.get(j).toString();
+                }
             }
 
             int puntuacion = Integer.parseInt(restaurantJson.get("puntuacion").toString());

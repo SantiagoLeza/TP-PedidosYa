@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06fa4908-5828-4d72-85f3-2bd76e962ad4" name="Changes" comment="0.5.0" />
+    <list default="true" id="06fa4908-5828-4d72-85f3-2bd76e962ad4" name="Changes" comment="0.5.1">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restaurants.json" beforeDir="false" afterPath="$PROJECT_DIR$/restaurants.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/ArchivoHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/ArchivoHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/PedidosYa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/PedidosYa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/Restaurant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/VentanaInicioLocal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/VentanaInicioLocal.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,6 +44,7 @@
     </hideBySeverity>
   </component>
   <component name="ProjectId" id="27R2Lpz8XeIuIsMKJtMLUuBgNhL" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -99,7 +107,21 @@
       <option name="project" value="LOCAL" />
       <updated>1649872899473</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="0.5.1">
+      <created>1649873796087</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1649873796087</updated>
+    </task>
+    <task id="LOCAL-00003" summary="0.5.1">
+      <created>1649873825329</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1649873825329</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -115,6 +137,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="0.5.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="0.5.0" />
+    <MESSAGE value="0.5.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.5.1" />
   </component>
 </project>

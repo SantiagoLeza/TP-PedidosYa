@@ -23,11 +23,11 @@ public class Restaurant
     private Horario horario;
     private float costoEnvio;
 
-    private static int ultimoId = 0;
+    private static int ultimoId = -1;
 
     public Restaurant(String mail, String contra, String nombre, String direccion, int telefono, String[] categorias, boolean takeAway, boolean delivery, int demora, Horario horario, float costoEnvio)
     {
-        this.id = ultimoId;
+        this.id = ultimoId + 1;
         ultimoId++;
         this.mail = mail;
         this.contra = contra;

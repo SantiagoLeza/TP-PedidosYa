@@ -96,36 +96,51 @@ public class PedidosYa {
     }
 
     //retora null si el restaurant ya existe, el objeto si lo crea
-    public Restaurant agregarRestaurant(String mail, String contra, String nombre, String direccion, int telefono, String[] categorias, boolean takeAway, boolean delivery, int demora, Horario horario, float costoEnvio)
+    public Restaurant agregarRestaurant(Restaurant restaurant)
     {
-         if(existeRestaurante(nombre, direccion))
+         if(existeRestaurante(restaurant.getNombre(), restaurant.getDireccion()))
          {
               return null;
          }
-         listaRestaurants[ultimoRestaurantRegistrado+1] = new Restaurant(mail, contra , nombre, direccion, telefono, categorias, takeAway, delivery, demora, horario, costoEnvio);
-         ultimoRestaurantRegistrado++;
+         if(listaRestaurants.length == 0)
+         {
+             listaRestaurants = new Restaurant[1];
+             listaRestaurants[0] = restaurant;
+             ultimoRestaurantRegistrado = 0;
+         }
+         else
+         {
+             Restaurant[] aux = new Restaurant[listaRestaurants.length + 1];
+             for(int i = 0; i < listaRestaurants.length; i++)
+             {
+                 aux[i] = listaRestaurants[i];
+             }
+             aux[aux.length-1] = restaurant;
+             listaRestaurants = aux;
+             ultimoRestaurantRegistrado = aux.length-1;
+         }
 
          hndl.guardarRestaurant(
-                 listaRestaurants[ultimoRestaurantRegistrado].getId(),
-                 listaRestaurants[ultimoRestaurantRegistrado].getMail(),
-                 listaRestaurants[ultimoRestaurantRegistrado].getContra(),
-                 listaRestaurants[ultimoRestaurantRegistrado].getNombre(),
-                 listaRestaurants[ultimoRestaurantRegistrado].getDireccion(),
-                 listaRestaurants[ultimoRestaurantRegistrado].getTelefono(),
-                 listaRestaurants[ultimoRestaurantRegistrado].getCategorias(),
-                 listaRestaurants[ultimoRestaurantRegistrado].getPuntuacion(),
-                 listaRestaurants[ultimoRestaurantRegistrado].getMenu(),
-                 listaRestaurants[ultimoRestaurantRegistrado].isTakeAway(),
-                 listaRestaurants[ultimoRestaurantRegistrado].isDelivery(),
-                 listaRestaurants[ultimoRestaurantRegistrado].getMediosDePago(),
-                 listaRestaurants[ultimoRestaurantRegistrado].getResenas(),
-                 listaRestaurants[ultimoRestaurantRegistrado].getPedidosPendientes(),
-                 listaRestaurants[ultimoRestaurantRegistrado].getDemora(),
-                 listaRestaurants[ultimoRestaurantRegistrado].getHorario(),
-                 listaRestaurants[ultimoRestaurantRegistrado].getCostoEnvio()
+                 restaurant.getId(),
+                 restaurant.getMail(),
+                 restaurant.getContra(),
+                 restaurant.getNombre(),
+                 restaurant.getDireccion(),
+                 restaurant.getTelefono(),
+                 restaurant.getCategorias(),
+                 restaurant.getPuntuacion(),
+                 restaurant.getMenu(),
+                 restaurant.isTakeAway(),
+                 restaurant.isDelivery(),
+                 restaurant.getMediosDePago(),
+                 restaurant.getResenas(),
+                 restaurant.getPedidosPendientes(),
+                 restaurant.getDemora(),
+                 restaurant.getHorario(),
+                 restaurant.getCostoEnvio()
          );
 
-         return listaRestaurants[ultimoRestaurantRegistrado];
+         return restaurant;
     }
 
     public void modificarRestaurant(Restaurant restaurant)
@@ -159,26 +174,6 @@ public class PedidosYa {
     {
         ArchivoHandler handler = new ArchivoHandler();
 
-//        hndl.guardarRestaurant(
-//                ultimoRestaurantRegistrado+1,
-//                "@a",
-//                "123",
-//                "Tio Andino",
-//                "Constitucion",
-//                123456789,
-//                new String[]{"Helados"},
-//                3,
-//                new Plato[5],
-//                true,
-//                true,
-//                new String[]{"Efectivo"},
-//                new Puntuacion[5],
-//                new Pedido[5],
-//                15,
-//                new Horario(16, 0, 23, 30)
-//        );
-
-
         listaRestaurants = handler.volcarArchiRestaurants();
         for(Restaurant r : listaRestaurants)
         {
@@ -194,6 +189,15 @@ public class PedidosYa {
             if (usuario != null)
             {
                 ultimoUserRegistrado++;
+            }
+        }
+
+        for(Restaurant r : listaRestaurants)
+        {
+            if(r != null)
+            {
+                System.out.println(r.getId());
+                System.out.println(r.getNombre());
             }
         }
 
