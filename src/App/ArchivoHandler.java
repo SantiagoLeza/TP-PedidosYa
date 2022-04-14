@@ -186,9 +186,7 @@ public class ArchivoHandler
             Object obj = new JSONParser().parse(reader);
             listaRestaurantes = (JSONArray) obj;
             restaurantes = new Restaurant[listaRestaurantes.size() * 5];
-        } catch (FileNotFoundException | ParseException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (ParseException | IOException e) {
             e.printStackTrace();
         }
 
